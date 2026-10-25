@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Return to VCamSX</title>
+  <link rel="stylesheet" href="payment-return.css">
+  <script src="payment-return.js" defer></script>
+</head>
+<body>
+  <main>
+    <img src="assets/vcamsx-logo.png" alt="VCamSX" width="88" height="88">
+    <p class="eyebrow">SECURE CHECKOUT</p>
+    <h1>Return to VCamSX</h1>
+    <p id="return-status" role="status">Opening VCamSX. If your browser asks, allow it to open the app.</p>
+    <a id="return-to-app" class="primary" href="intent://purchase-return/#Intent;scheme=vcamsx;package=com.wangyiheng.vcamsx;end">Return to VCamSX</a>
+    <a class="secondary" href="vcamsx://purchase-return/">Open with another browser</a>
+    <p>VCamSX will check your existing order with the payment provider. If confirmation is still pending, tap <strong>I paid · Check</strong> in the app.</p>
+    <p class="note">This page does not confirm payment or issue a key. Keep your receipt and do not pay again while the order is being checked.</p>
+    <noscript><p>Tap Return to VCamSX, or reopen VCamSX manually and tap I paid · Check.</p></noscript>
+  </main>
+</body>
+</html>

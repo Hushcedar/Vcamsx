@@ -1,37 +1,18 @@
-VCAMSX 2.1.3 brings improvements to media controls, audio monitoring, activation and the app layout.
+## VCAMSX 2.1.3
 
-## Download
+Updated media controls, audio monitoring, activation and layout improvements.
 
-Download **VCAMSX.apk** from **Assets** below and open it on your Android phone. Install over your existing official app to keep app data. Android 10+ is required.
+### What’s new
 
-Choose the APK rather than GitHub’s automatic “Source code” archives. Those archives contain public documentation and website files, not the Android application source.
+- Cleaner Target apps selection and separate camera/audio sections.
+- Improved audio playback controls and local monitoring.
+- Cleaner license-key display and copying.
+- Updated VCAMSX branding and activation pricing.
 
-## What’s new
+### Install or update
 
-- Compact Target apps selector and diagnostic tools in the overflow menu.
-- Separate camera/audio sections and a full-width Add Audio action.
-- Open The Real Scene control and software/hardware decoding labels.
-- MP3 playback controls and local monitoring while the microphone is active.
-- Clean license-key copying and consistent VCAMSX branding.
-- Fixed activation pricing: ₦21,000 NGN with Flutterwave or $15.00 USD with NOWPayments.
+Download **VCAMSX.apk** from **Assets** below and open it on your phone. Existing users can install it over their official VCAMSX app. Android 10 or newer is required.
 
-## Release details
-
-| Item | Value |
-| --- | --- |
-| Version | 2.1.3 |
-| Version code | 12 |
-| Package | `com.wangyiheng.vcamsx` |
-| Minimum Android | Android 10 / API 29 |
-| Architectures | ARM64 and ARMv7 |
-| APK size | 15,005,545 bytes |
-
-The signing certificate matches the previous official 2.1.0 APK. Compatibility depends on the selected engine, phone and target app version.
-
-**SHA-256 (VCAMSX.apk)**
-
-```text
-8e6de6d0a86f9ba769d473a322c1b9868332442e657d4922e57e52e74a0baa15
-```
+**Activation:** 30 days for $15.00 USD through NOWPayments or ₦21,000 NGN through Flutterwave. Purchase or restore access inside the app.
 
 [Setup guide](https://github.com/Hushcedar/Vcamsx/blob/main/docs/SETUP.md) · [Support](https://github.com/Hushcedar/Vcamsx/issues/new/choose)

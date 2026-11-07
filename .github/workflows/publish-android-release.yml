@@ -57,8 +57,9 @@ jobs:
           assert tools, 'Android signature verifier is missing'
           build_tools = tools[-1].parent
           signature = subprocess.check_output([str(build_tools / 'apksigner'), 'verify', '--verbose', '--print-certs', str(apk_path)], text=True)
-          fingerprints = re.findall(r'^Signer #\d+ certificate SHA-256 digest:\s*([0-9a-fA-F]+)\s*$', signature, re.M)
-          assert fingerprints == [metadata['signing_certificate_sha256']], 'Signing certificate mismatch'
+          fingerprints = re.findall(r'^Signer #\d+ certificate SHA-256 digest:\s*([0-9a-fA-F:]+)\s*$', signature, re.M)
+          fingerprints = [value.replace(':', '').lower() for value in fingerprints]
+          assert fingerprints == [metadata['signing_certificate_sha256']], 'Signing certificate mismatch: ' + repr(fingerprints)
           manifest = subprocess.check_output([str(build_tools / 'aapt'), 'dump', 'badging', str(apk_path)], text=True)
           assert "name='com.wangyiheng.vcamsx'" in manifest
           assert "versionName='" + version + "'" in manifest

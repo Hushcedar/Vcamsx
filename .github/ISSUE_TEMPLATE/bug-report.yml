@@ -1,0 +1,43 @@
+name: Bug report
+description: Report an app, installation or download problem.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Do not post license keys, receipts, passwords or private media."
+  - type: input
+    id: version
+    attributes:
+      label: VCAMSX version
+      placeholder: "2.1.3"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Phone model and Android version
+    validations:
+      required: true
+  - type: input
+    id: engine
+    attributes:
+      label: Selected engine or setup route
+      placeholder: "Legacy / MochiCloner / Host Clone"
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target app and version
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected result and actual result
+    validations:
+      required: true

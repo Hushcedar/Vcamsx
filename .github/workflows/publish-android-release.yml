@@ -1,0 +1,87 @@
+name: Publish Android release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - version.json
+      - release-payload/**
+      - .github/workflows/publish-android-release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-release-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Verify and prepare the signed APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, re, subprocess, zipfile
+
+          metadata = json.loads(pathlib.Path('version.json').read_text())
+          version = metadata['version']
+          assert re.fullmatch(r'\d+\.\d+\.\d+', version), 'Unexpected version format'
+          assert metadata['package'] == 'com.wangyiheng.vcamsx'
+          assert metadata['version_code'] == 12
+          assert re.fullmatch(r'[a-f0-9]{64}', metadata['sha256'])
+          assert re.fullmatch(r'[a-f0-9]{64}', metadata['signing_certificate_sha256'])
+          payload = pathlib.Path('release-payload') / ('VCAMSX-' + version + '.zip')
+          with zipfile.ZipFile(payload) as archive:
+              assert archive.namelist() == ['app-release.apk'], 'Unexpected payload files'
+              apk = archive.read('app-release.apk')
+          assert len(apk) == metadata['size_bytes'], 'APK size mismatch'
+          assert hashlib.sha256(apk).hexdigest() == metadata['sha256'], 'APK checksum mismatch'
+
+          output = pathlib.Path('release-output')
+          output.mkdir(exist_ok=True)
+          apk_path = output / 'VCAMSX.apk'
+          apk_path.write_bytes(apk)
+          with zipfile.ZipFile(apk_path) as archive:
+              assert 'AndroidManifest.xml' in archive.namelist(), 'Payload must be an APK, not a wrapper ZIP'
+
+          sdk = pathlib.Path(os.environ.get('ANDROID_HOME') or os.environ['ANDROID_SDK_ROOT'])
+          tools = sorted(sdk.glob('build-tools/*/apksigner'))
+          assert tools, 'Android signature verifier is missing'
+          build_tools = tools[-1].parent
+          signature = subprocess.check_output([str(build_tools / 'apksigner'), 'verify', '--verbose', '--print-certs', str(apk_path)], text=True)
+          fingerprints = re.findall(r'^Signer #\d+ certificate SHA-256 digest:\s*([0-9a-fA-F]+)\s*$', signature, re.M)
+          assert fingerprints == [metadata['signing_certificate_sha256']], 'Signing certificate mismatch'
+          manifest = subprocess.check_output([str(build_tools / 'aapt'), 'dump', 'badging', str(apk_path)], text=True)
+          assert "name='com.wangyiheng.vcamsx'" in manifest
+          assert "versionName='" + version + "'" in manifest
+          assert "versionCode='12'" in manifest
+          assert 'application-debuggable' not in manifest
+          (output / 'SHA256SUMS.txt').write_text(metadata['sha256'] + '  VCAMSX.apk\n')
+          (output / 'release.json').write_text(json.dumps(metadata, indent=2) + '\n')
+          with open(os.environ['GITHUB_ENV'], 'a') as environment:
+              environment.write('RELEASE_TAG=v' + version + '\n')
+              environment.write('RELEASE_TITLE=VCAMSX ' + version + '\n')
+          print('Verified APK checksum, package, version and production signing certificate.')
+          PY
+
+      - name: Publish verified release assets
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" release-output/VCAMSX.apk release-output/SHA256SUMS.txt release-output/release.json --clobber
+            gh release edit "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes-file docs/RELEASE_NOTES.md --draft=false --latest
+          else
+            gh release create "$RELEASE_TAG" release-output/VCAMSX.apk release-output/SHA256SUMS.txt release-output/release.json --target "$GITHUB_SHA" --title "$RELEASE_TITLE" --notes-file docs/RELEASE_NOTES.md --latest
+          fi

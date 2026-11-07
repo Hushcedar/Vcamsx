@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Download the latest official APK
+    url: https://github.com/Hushcedar/Vcamsx/releases/latest
+    about: Get VCAMSX and read its release notes.
+  - name: Setup guide
+    url: https://github.com/Hushcedar/Vcamsx/blob/main/docs/SETUP.md
+    about: Installation, engine setup, audio and troubleshooting.

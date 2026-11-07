@@ -1,106 +1,74 @@
-# VCAMSX
+# VCAMSX - Advanced Virtual Camera & App Cloner
 
-Virtual camera, audio controls and app cloning for Android.
+**VCAMSX** brings virtual camera controls, audio injection and app cloning together on Android. Use your own videos, images, live streams and audio in supported target apps, with a floating panel to control playback and adjust the picture while your target app is open.
 
-Use your own videos, images, live streams and audio in supported target apps. Adjust the picture and control playback from a floating panel while your target app is open.
+**[Download the latest VCAMSX APK](https://github.com/Hushcedar/Vcamsx/releases/latest/download/VCAMSX.apk)**
 
-## Download
+Requires Android 10 or newer.
 
-**[Download VCAMSX 2.1.3](https://github.com/Hushcedar/Vcamsx/releases/download/v2.1.3/VCAMSX.apk)**
+## Key Features
 
-Requires Android 10 or newer. Install the APK over your existing official VCAMSX app to update without uninstalling.
+* **App Cloning:** Search installed apps, prepare and install supported clones, launch them from VCAMSX and add shortcuts to your home screen.
+* **Virtual Camera Injection:** Replace the camera feed with a selected video, image or live stream in supported apps.
+* **Picture Adjustment:** Rotate in 90-degree steps, mirror horizontally, zoom in or out, and move the picture up, down, left or right. Controls work with selected videos and images.
+* **Audio Injection:** Choose separate audio for supported voice notes or use your selected video's soundtrack during supported calls.
+* **Local Audio Monitoring:** Hear injected audio while microphone capture is active. Monitoring stops when capture ends and requires working device echo cancellation.
+* **Advanced Streaming:** Connect HLS, HTTP, RTMP and RTSP media sources, with in-app media previews.
+* **Floating Controls:** Pause, resume, reload, adjust the picture and change playback speed between **0.5×, 1×, 1.5×, 2× and 3×**. Move the panel or collapse it into a floating bubble.
+* **Microphone & Call Audio Controls:** Toggle microphone mute and injected call audio where supported.
+* **Saved Target Settings:** Save media and injection settings for supported target apps.
+* **Decoding Options:** Switch between software and hardware decoding to suit your phone and media.
+* **Seven Themes:** Choose VCAMSX Cyan, Verdant, Ember, Prism, Midnight Dark, Sapphire or Amethyst.
 
-[Release notes](https://github.com/Hushcedar/Vcamsx/releases/tag/v2.1.3)
+Compatibility depends on your phone, selected engine and target app version. Generated Chrome and Edge clones retain their original microphone audio.
 
-## Camera and media
+## The Engines
 
-- **Video injection:** Use a selected video in place of the camera feed in supported apps.
-- **Image injection:** Use a selected image, with controls to rotate, mirror, zoom and reposition it.
-- **Live streaming:** Connect HLS, HTTP, RTMP and RTSP media sources.
-- **Media previews:** View your selected video, image or live stream inside VCAMSX.
-- **Decoding options:** Switch between software and hardware decoding to suit your device and media.
+Choose your setup inside VCAMSX and follow its in-app video tutorial.
 
-## Floating controls
+* **Host Clone (No Root):** Prepare a separate APK installation for a supported target app without rooting your phone. Keep the original app installed and approve installation when Android prompts.
+* **Legacy / LSPosed:** Use VCAMSX on a compatible rooted device. Enable the module in LSPosed and select your intended target apps in its scope.
+* **MochiCloner:** Follow the supported no-root helper tutorial and enable VCAMSX for your selected clone in MochiCloner's module settings.
 
-Keep control of your media without returning to the main screen.
+Engine-selection text is available in English, French and Spanish.
 
-- Pause, resume and reload playback.
-- Rotate the picture in 90-degree steps.
-- Mirror the picture horizontally.
-- Zoom in or out and move the picture up, down, left or right.
-- Change playback speed between **0.5×, 1×, 1.5×, 2× and 3×**.
-- Toggle microphone mute and injected call audio where supported.
-- Move the panel or collapse it into a floating bubble.
+## How to Install
 
-## Audio
+1. Download **VCAMSX.apk** from the **[Releases](https://github.com/Hushcedar/Vcamsx/releases/latest)** page.
+2. Open the APK on your Android phone. Allow installation from the browser or file manager you used if Android asks.
+3. Install the app, or choose **Update** over your existing official VCAMSX installation to keep its data.
+4. Open VCAMSX, choose your engine and follow its setup tutorial.
+5. Grant the permissions required for the features you use, including overlay permission for floating controls.
 
-- **Voice-note audio:** Select a separate audio file for supported voice-note recording.
-- **Video audio:** Use the selected video's soundtrack during supported calls.
-- **Local monitoring:** Hear injected audio on your phone while microphone capture is active. Monitoring stops when capture ends and requires working device echo cancellation.
-- **Playback controls:** Pause, resume, reload and change the speed of selected audio through the floating panel when that audio source is active.
+## Purchasing a License
 
-Audio availability depends on your selected setup and target app. Generated Chrome and Edge clones retain their original microphone audio.
+VCAMSX uses a **30-day license**.
 
-## App cloning and target settings
+1. Open **My Keys / Buy Keys** inside the app.
+2. Choose your payment method:
+   * **Fiat (Flutterwave): ₦21,000 NGN.**
+   * **Crypto (NOWPayments): $15.00 USD.**
+3. Complete payment and return to VCAMSX. If access has not updated, tap **I paid · Check**.
+4. Save your license key privately using the **Copy** button in **My Keys**.
 
-Search installed apps, prepare a supported clone, approve its installation and launch it from VCAMSX. Add installed clones to your home screen and refresh their app source when needed.
+My Keys shows your key, activation status, expiry and recorded purchase history. Restoring eligible access keeps the key's existing expiry and remains subject to activation checks.
 
-VCAMSX saves target-app media and injection settings so you can maintain different configurations for your supported targets. Host Clone creates separate app installations; keep the original app installed.
+## Basic Usage Guide
 
-## Personalization
+1. **Select Your Target:** Choose a supported target app and complete its engine-specific setup.
+2. **Configure Media:** Tap **Select Video** or **Select Image**, or enter your live-stream URL.
+3. **Enable Injection:** Turn on the matching media setting, then open your prepared target app.
+4. **Use the Floating Panel:** Pause, resume, reload, rotate, mirror, zoom, reposition or change playback speed without returning to the main screen.
+5. **Set Up Audio:** Select separate audio for supported voice notes or enable video audio for supported calls. Turn on local monitoring if you want to hear the injected audio on your phone.
 
-Choose from seven themes: **VCAMSX Cyan, Verdant, Ember, Prism, Midnight Dark, Sapphire and Amethyst**.
+## Disclaimer
 
-The engine-selection screen includes English, French and Spanish options, along with in-app video tutorials for the available setup routes.
+VCAMSX is intended for authorized testing, development and personal media use. Use only media, accounts and devices you are authorized to use. Follow applicable laws and the rules of third-party services. Do not use VCAMSX to impersonate others or bypass identity, authentication or liveness checks.
 
-## Engine options
+## Support & Contact
 
-### Host Clone (no root)
+For setup help, download problems, bug reports or feature requests, **[open a support issue](https://github.com/Hushcedar/Vcamsx/issues/new/choose)**.
 
-Prepare and install a separate APK for a supported target app without rooting your phone. Android will ask you to approve installation.
+Include your phone model, Android version, selected engine, target app version and steps to reproduce the issue. Keep license keys, payment details and private media out of public issues.
 
-### Legacy / LSPosed
-
-Use VCAMSX on a compatible rooted device with LSPosed. Enable the module, select your intended target apps in its scope and follow the in-app tutorial.
-
-### MochiCloner
-
-Follow the supported no-root helper tutorial and enable VCAMSX for your selected clone in MochiCloner's module settings.
-
-Compatibility depends on your phone, selected engine and target app version.
-
-## Install and get started
-
-1. Download **VCAMSX.apk** from the release link above.
-2. Open it on your Android phone. Allow installation from your browser or file manager if prompted.
-3. Install or update VCAMSX and open the app.
-4. Choose your setup and follow its in-app tutorial.
-5. Select a target app, choose your media and enable the matching injection setting.
-6. Open your prepared target app and use the floating controls as needed.
-
-Grant the permissions needed for the features you use, including overlay permission for floating controls.
-
-## Activation
-
-Open **My Keys / Buy Keys** inside VCAMSX to purchase or restore access.
-
-**30 days of access**
-
-- **NOWPayments:** $15.00 USD.
-- **Flutterwave:** ₦21,000 NGN.
-
-After payment, return to the app and tap **I paid · Check** if access has not updated. My Keys shows your key, activation status, expiry and recorded purchase history, with a Copy button for the clean license key.
-
-Keep your key and receipt private. Restoring access keeps the existing expiry and remains subject to activation checks.
-
-## Support
-
-[Get help or report a problem](https://github.com/Hushcedar/Vcamsx/issues/new/choose)
-
-Include your phone model, Android version, selected engine, target app version and steps to reproduce the problem. VCAMSX includes audio diagnostics, call-surface traces and crash-log tools to help investigate problems.
-
-Do not post license keys, payment details or private media in public issues.
-
-## Responsible use
-
-Use VCAMSX with media, accounts and devices you are authorized to use. Follow applicable laws and service rules. Do not use it to impersonate others or bypass identity, authentication or liveness checks.
+© 2026 VCAMSX. All rights reserved.

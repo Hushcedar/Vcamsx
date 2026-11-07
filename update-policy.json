@@ -1,0 +1,8 @@
+{
+  "latest_version": "2.1.4",
+  "latest_version_code": 13,
+  "min_version": "2.1.4",
+  "min_version_code": 13,
+  "message": "Update policy test: this screen confirms that required updates are enforced.",
+  "download_url": "https://github.com/Hushcedar/Vcamsx/releases/latest"
+}

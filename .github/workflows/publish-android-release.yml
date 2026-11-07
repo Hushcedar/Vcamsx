@@ -57,7 +57,7 @@ jobs:
           assert tools, 'Android signature verifier is missing'
           build_tools = tools[-1].parent
           signature = subprocess.check_output([str(build_tools / 'apksigner'), 'verify', '--verbose', '--print-certs', str(apk_path)], text=True)
-          fingerprints = re.findall(r'^Signer #\d+ certificate SHA-256 digest:\s*([0-9a-fA-F:]+)\s*$', signature, re.M)
+          fingerprints = re.findall(r'certificate SHA-256 digest:\s*([0-9a-fA-F:]+)', signature, re.M)
           fingerprints = [value.replace(':', '').lower() for value in fingerprints]
           assert fingerprints == [metadata['signing_certificate_sha256']], 'Signing certificate mismatch: ' + repr(fingerprints)
           manifest = subprocess.check_output([str(build_tools / 'aapt'), 'dump', 'badging', str(apk_path)], text=True)
@@ -81,8 +81,8 @@ jobs:
         run: |
           set -euo pipefail
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
-            gh release upload "$RELEASE_TAG" release-output/VCAMSX.apk release-output/SHA256SUMS.txt release-output/release.json --clobber
+            gh release upload "$RELEASE_TAG" release-output/VCAMSX.apk --clobber
             gh release edit "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes-file docs/RELEASE_NOTES.md --draft=false --latest
           else
-            gh release create "$RELEASE_TAG" release-output/VCAMSX.apk release-output/SHA256SUMS.txt release-output/release.json --target "$GITHUB_SHA" --title "$RELEASE_TITLE" --notes-file docs/RELEASE_NOTES.md --latest
+            gh release create "$RELEASE_TAG" release-output/VCAMSX.apk --target "$GITHUB_SHA" --title "$RELEASE_TITLE" --notes-file docs/RELEASE_NOTES.md --latest
           fi

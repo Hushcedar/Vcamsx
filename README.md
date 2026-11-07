@@ -31,7 +31,7 @@ The **APK under Assets** is the Android installer. GitHub's automatically genera
 - Monitor injected audio locally while the microphone is active.
 - Choose a supported root or no-root setup inside the app.
 
-Compatibility depends on your phone, engine, target app and app version. This release does not include the proposed replacement container or a new Google services engine.
+Compatibility depends on your phone, selected engine and target app version.
 
 ## Get started
 

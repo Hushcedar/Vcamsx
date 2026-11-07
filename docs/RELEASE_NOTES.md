@@ -1,4 +1,4 @@
-The normal VCAMSX app release, with the existing interface and the latest fixes. Experimental UI designs and the proposed replacement container are not included.
+VCAMSX 2.1.3 brings improvements to media controls, audio monitoring, activation and the app layout.
 
 ## Download
 
@@ -26,7 +26,7 @@ Choose the APK rather than GitHub’s automatic “Source code” archives. Thos
 | Architectures | ARM64 and ARMv7 |
 | APK size | 15,005,545 bytes |
 
-The signing certificate matches the previous official 2.1.0 APK. The production build passed CI, including release signature verification. Real-device behavior still depends on the selected engine and target app.
+The signing certificate matches the previous official 2.1.0 APK. Compatibility depends on the selected engine, phone and target app version.
 
 **SHA-256 (VCAMSX.apk)**
 

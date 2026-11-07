@@ -44,14 +44,17 @@ Engine-selection text is available in English, French and Spanish.
 
 VCAMSX uses a **30-day license**.
 
-1. Open **My Keys / Buy Keys** inside the app.
-2. Choose your payment method:
-   * **Fiat (Flutterwave): ₦21,000 NGN.**
-   * **Crypto (NOWPayments): $15.00 USD.**
-3. Complete payment and return to VCAMSX. If access has not updated, tap **I paid · Check**.
-4. Save your license key privately using the **Copy** button in **My Keys**.
+When you open VCAMSX for the first time, the **Activate VCAMSX** screen appears automatically. You can buy your first key directly from this screen.
 
-My Keys shows your key, activation status, expiry and recorded purchase history. Restoring eligible access keeps the key's existing expiry and remains subject to activation checks.
+1. Choose your payment method:
+   * **Fiat · Flutterwave: ₦21,000 NGN.**
+   * **Crypto · NOWPayments: $15.00 USD.**
+2. For Flutterwave, enter your receipt email, then tap **Buy Key** to continue to checkout.
+3. Complete payment, return to VCAMSX and tap **I paid · Check** to verify your purchase and activate access.
+
+**Already have a key?** Returning users can use this option on the same activation screen. Enter your saved license key and tap **Activate key** to restore eligible access. Recovery keeps the key's existing expiry and remains subject to activation checks.
+
+After activation, use **My Keys / Buy Keys** to view your key, activation status, expiry and recorded purchase history, or purchase additional keys. Save your key privately using the **Copy** button in **My Keys**.
 
 ## Basic Usage Guide
 
